@@ -11,10 +11,6 @@ const purchaseRoutes = require('./backend/routes/purchaseRoutes');
 const expensesRoutes = require('./backend/routes/expensesRoutes');
 const revenueRoutes = require('./backend/routes/revenueRoutes');
 
-
-
-
-
 try {
     const salesRoutes = require('./backend/routes/salesRoutes');
     
@@ -29,7 +25,7 @@ try {
     console.error('❌ Failed to load salesRoutes:', error.message);
     console.error(error.stack);
 }
-console.log('----------------------------------------\n');
+
 
 const app = express();
 
@@ -50,20 +46,20 @@ try {
 }
 
 // Test endpoint - add this first
-app.get('/api/test', (req, res) => {
-    res.json({ 
-        message: 'Server is working! 🚀', 
-        timestamp: new Date().toISOString(),
-        endpoints: [
-            '/api/products', 
-            '/api/users', 
-            '/api/orders', 
-            '/api/admin', 
-            '/api/profile',
-            '/api/sales'  // Added this
-        ]
-    });
-});
+// app.get('/api/test', (req, res) => {
+//     res.json({ 
+//         message: 'Server is working! 🚀', 
+//         timestamp: new Date().toISOString(),
+//         endpoints: [
+//             '/api/products', 
+//             '/api/users', 
+//             '/api/orders', 
+//             '/api/admin', 
+//             '/api/profile',
+//             '/api/sales'  // Added this
+//         ]
+//     });
+// });
 
 
 app.get('/api/ai-test', async (req, res) => {
